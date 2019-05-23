@@ -1,0 +1,28 @@
+server:
+  port: 8066
+spring:
+  datasource:
+    primary:
+      url: jdbc:postgresql://172.20.32.27:5432/wxy?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: postgres
+      password: Sailing@123
+      driver-class-name: org.postgresql.Driver
+    secondary:
+      url: jdbc:mysql://172.20.32.55:3306/u2s?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: Ast4HS
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    #database: mysql
+    #generate-ddl: true
+    show-sql: true
+    hibernate:
+      #ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+#配置定时任务执行时间
+cron: 0 0/1 * * * ?
